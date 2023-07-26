@@ -1,0 +1,18 @@
+
+<h1>Welcome to the index</h1>
+
+<div style="margin: auto;" class="bg bg-primary p-5"> 
+    <% @pets.each do |pet| %> 
+        <div style="border: 1px solid blue; margin-bottom: 5px;"> 
+            <h4><%= pet.name %></h4>
+            <p><%= pet.address %></p>
+            <p><%= pet.species %></p>
+            <p><%= pet.found_on %></p>
+
+            <%= link_to 'See Pet', pet_path(pet) %>
+            <%= link_to 'Delete Pet', pet_path(pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+        </div>
+    <% end %>
+</div>
+
